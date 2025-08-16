@@ -16,6 +16,7 @@ import { useChurches } from '@/hooks/useChurches';
 import { useChurchContext } from '@/contexts/ChurchContext';
 import { useNewUserRole } from '@/hooks/useNewRole';
 import { ResponsiveDashboardGrid } from '@/components/ui/responsive-dashboard-grid';
+import { MissoesLayout } from '@/components/missoes/MissoesLayout';
 
 // Mock data para demonstração - em um app real viria da API
 const getFinancialMovements = (churchId: string) => ({
@@ -219,7 +220,8 @@ const MissoesFinanceiro: React.FC = () => {
   const saldoTotal = totalReceitas - totalDespesas;
 
   return (
-    <div className="space-y-6">
+    <MissoesLayout>
+      <div className="space-y-6">
       {/* Header */}
       <div className="flex items-center justify-between">
         <div className="space-y-1">
@@ -334,7 +336,8 @@ const MissoesFinanceiro: React.FC = () => {
           </div>
         </div>
       )}
-    </div>
+      </div>
+    </MissoesLayout>
   );
 };
 
